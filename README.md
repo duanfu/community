@@ -15,7 +15,7 @@ mvn package
 java -jar target/community-0.0.1-SNAPSHOT.jar
 ```
 
-4.访问项目
+4.访问项目a 
 
 ```
 http://localhost:8888
