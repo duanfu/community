@@ -19,6 +19,7 @@ public class IndexController {
     public String index(HttpServletRequest request){
         Cookie[] cookies = request.getCookies();
         for (Cookie cookie : cookies) {
+            if(cookie != null && cookies.length !=0)
             if (cookie.getName().equals("token")){
                 String token = cookie.getValue();
                 User user = userMapper.findByToken(token);
