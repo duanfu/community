@@ -17,4 +17,7 @@ public interface UserMapper {
     //是类的时候会自动放进去，不是类的时候需要加一个注解@Param("token")
     @Select("select * from user where token = #{token}")
     User findByToken(@Param("token")String token);
+
+    @Select("select * from user where id = #{id}")
+    User findById(@Param("id")Integer id);
 }

@@ -26,7 +26,7 @@ http://localhost:8888
 
 [Spring 文档](https://spring.io/guides)    
 [Spring Web](https://spring.io/guides/gs/serving-web-content/)   
-[es 社区](https://elasticsearch.cn/explore)    
+[elstaic 中文社区](https://elasticsearch.cn/explore)    
 [Github deploy key](https://github.com/duanfu/community/settings/keys)    
 [Bootstrap](https://v3.bootcss.com/getting-started/)    
 [Github OAuth](https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/)    
