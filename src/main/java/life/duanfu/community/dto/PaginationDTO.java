@@ -17,18 +17,8 @@ public class PaginationDTO {
     private List<Integer> pages = new ArrayList<>();
     private Integer totalPage;
 
-    public void setPagination(Integer totalCount, Integer page, Integer size) {
-        if (totalCount % size == 0) {
-            totalPage = totalCount / size;
-        } else {
-            totalPage = totalCount / size + 1;
-        }
-        if (page < 1) {
-            page = 1;
-        }
-        if (page > totalPage) {
-            page = totalPage;
-        }
+    public void setPagination(Integer totalPage, Integer page) {
+        this.totalPage=totalPage;
         this.page = page;
         //希望每个列表有7页，7页=当前页+左3+右3
         pages.add(page);
@@ -62,7 +52,7 @@ public class PaginationDTO {
         }
 
         //是否展示尾页按钮
-        if (pages.contains(totalCount)) {
+        if (pages.contains(totalPage)) {
             showEndPage = false;
         } else {
             showEndPage = true;
