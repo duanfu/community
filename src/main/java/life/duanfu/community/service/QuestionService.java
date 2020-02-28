@@ -95,4 +95,15 @@ public class QuestionService {
         paginationDTO.setQuestions(questionDTOList);
         return paginationDTO;
     }
+
+    //问题详情页面
+    public QuestionDTO getById(Integer id) {
+        Question question = questionMapper.getById(id);
+        QuestionDTO questionDTO = new QuestionDTO();
+        BeanUtils.copyProperties(question, questionDTO);
+        //question页面用到了作者
+        User user = userMapper.findById(question.getCreator());
+        questionDTO.setUser(user);
+        return questionDTO;
+    }
 }
