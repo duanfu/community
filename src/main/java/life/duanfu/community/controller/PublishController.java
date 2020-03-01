@@ -1,12 +1,14 @@
 package life.duanfu.community.controller;
 
-import life.duanfu.community.mapper.QuestionMapper;
+import life.duanfu.community.dto.QuestionDTO;
 import life.duanfu.community.model.Question;
 import life.duanfu.community.model.User;
+import life.duanfu.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -15,19 +17,36 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class PublishController {
 
-    @Autowired
-    private QuestionMapper questionMapper;
 
+    @Autowired
+    private QuestionService questionService;
+
+
+    //修改问题页面
+    @GetMapping("/publish/{id}")
+    public String edit(@PathVariable(name = "id") Integer id,
+                       Model model) {
+        QuestionDTO question = questionService.getById(id);
+        model.addAttribute("title", question.getTitle());
+        model.addAttribute("description", question.getDescription());
+        model.addAttribute("tag", question.getTag());
+        return "publish";
+    }
+
+    //添加问题页面
     @GetMapping("/publish")
     public String publish() {
         return "publish";
     }
 
+    //点击发布按钮，会走这个请求，post提交表单
     @PostMapping("/publish")
     public String doPublish(
             @RequestParam(value = "title", required = false) String title,
             @RequestParam(value = "description", required = false) String description,
             @RequestParam(value = "tag", required = false) String tag,
+            //拿到input的隐藏属性
+            @RequestParam(value = "id", required = false) Integer id,
             HttpServletRequest request,
             Model model) {
 
@@ -65,9 +84,10 @@ public class PublishController {
         question.setDescription(description);
         question.setTag(tag);
         question.setCreator(user.getId());
-        question.setGmtCreate(System.currentTimeMillis());
-        question.setGmtModified(question.getGmtCreate());
-        questionMapper.create(question);
+        //把页面的隐藏属性set进来，它是可以空的
+        question.setId(id);
+        //questionMapper.create(question);
+        questionService.createOrUpdate(question);
         return "redirect:/";
     }
 }
