@@ -4,6 +4,7 @@ import life.duanfu.community.dto.PaginationDTO;
 import life.duanfu.community.dto.QuestionDTO;
 import life.duanfu.community.exception.CustomizeErrorCode;
 import life.duanfu.community.exception.CustomizeException;
+import life.duanfu.community.mapper.QuestionExtMapper;
 import life.duanfu.community.mapper.QuestionMapper;
 import life.duanfu.community.mapper.UserMapper;
 import life.duanfu.community.model.Question;
@@ -24,12 +25,16 @@ public class QuestionService {
     @Autowired
     private UserMapper userMapper;
 
+    //注入进来扩展的Mapper，增加阅读数
+    @Autowired
+    private QuestionExtMapper questionExtMapper;
+
     //分页
     public PaginationDTO list(Integer page, Integer size) {
         PaginationDTO paginationDTO = new PaginationDTO();
         Integer totalPage;
         //Integer totalCount = questionMapper.count();
-        Integer totalCount = (int)questionMapper.countByExample(new QuestionExample());
+        Integer totalCount = (int) questionMapper.countByExample(new QuestionExample());
         if (totalCount % size == 0) {
             totalPage = totalCount / size;
         } else {
@@ -49,7 +54,7 @@ public class QuestionService {
         Integer offset = size * (page - 1);
         //从数据库中查找问题，一页5个
         //List<Question> questions = questionMapper.list(offset, size);
-        List<Question> questions = questionMapper.selectByExampleWithBLOBsWithRowbounds(new QuestionExample(),new RowBounds(offset,size));
+        List<Question> questions = questionMapper.selectByExampleWithBLOBsWithRowbounds(new QuestionExample(), new RowBounds(offset, size));
 
         List<QuestionDTO> questionDTOList = new ArrayList<>();
 
@@ -76,7 +81,7 @@ public class QuestionService {
         QuestionExample questionExample = new QuestionExample();
         questionExample.createCriteria()
                 .andCreatorEqualTo(userId);
-        Integer totalCount = (int)questionMapper.countByExample(questionExample);
+        Integer totalCount = (int) questionMapper.countByExample(questionExample);
         //越界问题
         if (totalCount % size == 0) {
             totalPage = totalCount / size;
@@ -98,7 +103,7 @@ public class QuestionService {
         QuestionExample example = new QuestionExample();
         example.createCriteria()
                 .andCreatorEqualTo(userId);
-        List<Question> questions = questionMapper.selectByExampleWithBLOBsWithRowbounds(example,new RowBounds(offset,size));
+        List<Question> questions = questionMapper.selectByExampleWithBLOBsWithRowbounds(example, new RowBounds(offset, size));
 
         List<QuestionDTO> questionDTOList = new ArrayList<>();
         for (Question question : questions) {
@@ -119,7 +124,7 @@ public class QuestionService {
         //Question question = questionMapper.getById(id);
         Question question = questionMapper.selectByPrimaryKey(id);
         //返回异常信息
-        if(question == null){
+        if (question == null) {
             throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
         }
         QuestionDTO questionDTO = new QuestionDTO();
@@ -157,9 +162,17 @@ public class QuestionService {
             //可能数据库中就没有，我们都知道更新成功是返回1，更新失败是返回0，所以说可能数据库中就不存在这个，
             //或者说，你这个页面停留在更新页面的时候，我在另一个页面把原来的问题删除了，所以我点击发布按钮的时候可能我
             //原问题已经不存在了，所以这个地方也要加一个验证。
-            if (updated != 1){
+            if (updated != 1) {
                 throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
             }
         }
+    }
+
+    //阅读数累加
+    public void incView(Integer id) {
+        Question question = new Question();
+        question.setId(id);
+        question.setViewCount(1);
+        questionExtMapper.incView(question);
     }
 }
