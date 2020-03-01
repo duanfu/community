@@ -2,8 +2,11 @@ package life.duanfu.community.service;
 
 import life.duanfu.community.mapper.UserMapper;
 import life.duanfu.community.model.User;
+import life.duanfu.community.model.UserExample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UserService {
@@ -16,21 +19,33 @@ public class UserService {
         //就相当于之前我的登录态是不需要的，我需要把token刷新一下。
         //所以我们需要实现的逻辑是，通过数据库能查到accountId等于当前我登录成功的accountId的话我去把当前的token更新掉
         //如果没有我做插入操作
-        User dbUser = userMapper.findByAccountId(user.getAccountId());
-        if (dbUser == null){
+        //User dbUser = userMapper.findByAccountId(user.getAccountId());
+        UserExample userExample = new UserExample();
+        userExample.createCriteria()
+                .andAccountIdEqualTo(user.getAccountId());
+        List<User> users = userMapper.selectByExample(userExample);
+
+        if (users.size() == 0) {
             //insert
             //因为update的时候是不需要创建时间的所以把时间拿进来
             user.setGmtCreate(System.currentTimeMillis());
             user.setGmtModified(user.getGmtCreate());
             userMapper.insert(user);
-        }else {
+        } else {
             //update
             //因为修改时间，头像，名字，token都会变化
-            dbUser.setGmtModified(System.currentTimeMillis());
-            dbUser.setAvatarUrl(user.getAvatarUrl());
-            dbUser.setName(user.getName());
-            dbUser.setToken(user.getToken());
-            userMapper.update(dbUser);
+            User dbUser = users.get(0);
+            User updateUser = new User();
+            updateUser.setGmtModified(System.currentTimeMillis());
+            updateUser.setAvatarUrl(user.getAvatarUrl());
+            updateUser.setName(user.getName());
+            updateUser.setToken(user.getToken());
+            //传进来的值不为空的时候再使用这个方法
+            UserExample example = new UserExample();
+            example.createCriteria()
+                    .andIdEqualTo(dbUser.getId());
+            //userMapper.update(dbUser);
+            userMapper.updateByExampleSelective(updateUser, example);
         }
 
     }
