@@ -2,6 +2,8 @@ package life.duanfu.community.service;
 
 import life.duanfu.community.dto.PaginationDTO;
 import life.duanfu.community.dto.QuestionDTO;
+import life.duanfu.community.exception.CustomizeErrorCode;
+import life.duanfu.community.exception.CustomizeException;
 import life.duanfu.community.mapper.QuestionMapper;
 import life.duanfu.community.mapper.UserMapper;
 import life.duanfu.community.model.Question;
@@ -116,7 +118,10 @@ public class QuestionService {
     public QuestionDTO getById(Integer id) {
         //Question question = questionMapper.getById(id);
         Question question = questionMapper.selectByPrimaryKey(id);
-
+        //返回异常信息
+        if(question == null){
+            throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
+        }
         QuestionDTO questionDTO = new QuestionDTO();
         BeanUtils.copyProperties(question, questionDTO);
         //question页面用到了作者
@@ -147,7 +152,14 @@ public class QuestionService {
             QuestionExample example = new QuestionExample();
             example.createCriteria()
                     .andIdEqualTo(question.getId());
-            questionMapper.updateByExampleSelective(updateQuestion, example);
+            int updated = questionMapper.updateByExampleSelective(updateQuestion, example);
+            //更新接口，我默认页面传过来的这个id，数据库中它已经存在，直接更新了。
+            //可能数据库中就没有，我们都知道更新成功是返回1，更新失败是返回0，所以说可能数据库中就不存在这个，
+            //或者说，你这个页面停留在更新页面的时候，我在另一个页面把原来的问题删除了，所以我点击发布按钮的时候可能我
+            //原问题已经不存在了，所以这个地方也要加一个验证。
+            if (updated != 1){
+                throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
+            }
         }
     }
 }
