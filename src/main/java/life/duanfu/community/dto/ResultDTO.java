@@ -26,7 +26,7 @@ public class ResultDTO {
         return errorOf(e.getCode(),e.getMessage());
     }
 
-    //登录成功
+    //登录请求成功
     public static ResultDTO okOf(){
         ResultDTO resultDTO = new ResultDTO();
         resultDTO.setCode(200);

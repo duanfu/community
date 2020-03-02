@@ -31,7 +31,7 @@ public class CommentController {
                        HttpServletRequest request){
         User user = (User) request.getSession().getAttribute("user");
         if (user == null){
-            return ResultDTO.errorOf(CustomizeErrorCode.NO_LOGGING);
+            return ResultDTO.errorOf(CustomizeErrorCode.NO_LOGIN);
         }
         Comment comment = new Comment();
         comment.setParentId(commentDTO.getParentId());
