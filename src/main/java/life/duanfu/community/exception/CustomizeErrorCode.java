@@ -5,8 +5,15 @@ package life.duanfu.community.exception;
 //所以为了方便，我给question定义一个通用的，然后分别去给他做一个封装。
 //所以我希望外层传进去的使用的时候，是一个接口的形式。里面我可以定义成不同的业务类型的ErrorCode，系统类型的ErrorCode
 public enum CustomizeErrorCode implements ICustomizeErrorCode {
-    QUESTION_NOT_FOUND("你找的问题不存在了，要不要换个试试？");
 
+    QUESTION_NOT_FOUND(2001, "你找的问题不存在了，要不要换个试试？"),
+    TARGET_PARAM_NOT_FOUND(2002, "未选中任何问题或评论进行回复"),
+    NO_LOGGING(2003,"当前操作需要登录，请登录后重试"),
+    SYS_ERROR(2004,"服务冒烟了，要不然你稍后试试！！！"),
+
+    ;
+
+    private Integer code;
     private String message;
 
     @Override
@@ -14,7 +21,16 @@ public enum CustomizeErrorCode implements ICustomizeErrorCode {
         return message;
     }
 
-    CustomizeErrorCode(String message) {
-        this.message = message;
+    @Override
+    public Integer getCode() {
+        return code;
     }
+
+    //调整参数ctrl+F6,好处如果其他地方依赖的话，会自动调整前后位置
+    CustomizeErrorCode(Integer code, String message) {
+        this.message = message;
+        this.code = code;
+    }
+
+
 }

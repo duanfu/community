@@ -5,18 +5,20 @@ package life.duanfu.community.exception;
 //而仅仅在我ControllerAdvice里面去开始就好了
 public class CustomizeException extends RuntimeException {
     private String message;
+    private Integer code;
 
     public CustomizeException(ICustomizeErrorCode errorCode) {
+        this.code = errorCode.getCode();
         this.message = errorCode.getMessage();
-    }
-
-    public CustomizeException(String message) {
-        this.message = message;
     }
 
     //外层可以拿到我的方法，重载了父类的Throwable的方法
     @Override
     public String getMessage() {
         return message;
+    }
+
+    public Integer getCode() {
+        return code;
     }
 }
