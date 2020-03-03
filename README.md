@@ -46,7 +46,7 @@ http://localhost:8888
 [Flyway](https://flywaydb.org/getstarted/firststeps/maven)  
 [Lombok](https://www.projectlombok.org)    
 [Live Reload](https://addons.mozilla.org/en-US/firefox/addon/livereload-web-extension/)  
-[Postman](https://chrome.google.com/webstore/detail/coohjcphdfgbiolnekdpbcijmhambjff)
+[Postwoman](https://postwoman.io)
 
 ## 脚本
 

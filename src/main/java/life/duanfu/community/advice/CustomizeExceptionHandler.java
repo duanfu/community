@@ -20,7 +20,7 @@ public class CustomizeExceptionHandler {
     @ExceptionHandler(Exception.class)
     ModelAndView handle(Throwable e, Model model, HttpServletRequest request, HttpServletResponse response) {
         String contentType = request.getContentType();
-        if ("application/json".equals(contentType)) {
+        if ("application/json; charset=utf-8".equals(contentType)) {
             ResultDTO resultDTO;
             //返回JSON
             if (e instanceof CustomizeException) {
@@ -29,9 +29,8 @@ public class CustomizeExceptionHandler {
                 resultDTO = ResultDTO.errorOf(CustomizeErrorCode.SYS_ERROR);
             }
             try {
-                response.setContentType("application/json");
+                response.setContentType("application/json; charset=utf-8");
                 response.setStatus(200);
-                response.setCharacterEncoding("utf-8");
                 PrintWriter writer = response.getWriter();
                 writer.write(JSON.toJSONString(resultDTO));
                 writer.close();
