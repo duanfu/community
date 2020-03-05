@@ -4,19 +4,26 @@ function post() {
     $.ajax({
         type: "POST",
         url: "/comment",
-        contentType:'application/json',
+        contentType: 'application/json',
         data: JSON.stringify({
-            "parentId":questionId,
-            "content":content,
-            "type":1
+            "parentId": questionId,
+            "content": content,
+            "type": 1
         }),
         success: function (response) {
-            if (response.code == 200){
-             $("#comment_section").hide();
+            if (response.code == 200) {
+                $("#comment_section").hide();
             } else {
-                alert(response.message);
+                if (response.code == 2003) {
+                    var isAccpeted = confirm(response.message);
+                    if (isAccpeted){
+                        window.open("https://github.com/login/oauth/authorize?client_id=cb8ef46d6931362a4e03&redirect_uri=http://localhost:8888/callback&scope=user&state=1");
+                        window.localStorage.setItem("closable", true);
+                    }
+                } else {
+                    alert(response.message);
+                }
             }
-            console.log(response)
         },
         dataType: "json"
     });

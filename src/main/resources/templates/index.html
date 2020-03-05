@@ -9,6 +9,16 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js" type="application/javascript"></script>
 </head>
+<script type="application/javascript">
+    <!--当文档加载完成的时候，我需要去校验一下刚才的localStorage-->
+    window.onload = function () {
+        var closable = window.localStorage.getItem("closable");
+        if (closable == "true"){
+            window.close();
+            window.localStorage.removeItem("closable");
+        }
+    }
+</script>
 <body>
 <div th:replace="~{navigation :: nav}"></div>
 <div class="container-fluid main">
