@@ -1,6 +1,6 @@
 package life.duanfu.community.controller;
 
-import life.duanfu.community.dto.CommentDTO;
+import life.duanfu.community.dto.CommentCreateDTO;
 import life.duanfu.community.dto.ResultDTO;
 import life.duanfu.community.exception.CustomizeErrorCode;
 import life.duanfu.community.model.Comment;
@@ -26,17 +26,17 @@ public class CommentController {
     //回给前端的时候呢，也是返回一个Java的Object，让Spring去做，把Object转换成JSON。
     @ResponseBody
     @RequestMapping(value = "/comment",method = RequestMethod.POST)
-    //@RequestBody CommentDTO commentDTO自动的把key和value赋值上去了
-    public Object post(@RequestBody CommentDTO commentDTO,
+    //@RequestBody CommentCreateDTO commentDTO自动的把key和value赋值上去了
+    public Object post(@RequestBody CommentCreateDTO commentCreateDTO,
                        HttpServletRequest request){
         User user = (User) request.getSession().getAttribute("user");
         if (user == null){
             return ResultDTO.errorOf(CustomizeErrorCode.NO_LOGIN);
         }
         Comment comment = new Comment();
-        comment.setParentId(commentDTO.getParentId());
-        comment.setContent(commentDTO.getContent());
-        comment.setType(commentDTO.getType());
+        comment.setParentId(commentCreateDTO.getParentId());
+        comment.setContent(commentCreateDTO.getContent());
+        comment.setType(commentCreateDTO.getType());
         comment.setGmtModified(System.currentTimeMillis());
         comment.setGmtCreate(System.currentTimeMillis());
         comment.setCommentator(user.getId());
