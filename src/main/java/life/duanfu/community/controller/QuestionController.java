@@ -2,6 +2,7 @@ package life.duanfu.community.controller;
 
 import life.duanfu.community.dto.CommentDTO;
 import life.duanfu.community.dto.QuestionDTO;
+import life.duanfu.community.enums.CommentTypeEnum;
 import life.duanfu.community.service.CommentService;
 import life.duanfu.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class QuestionController {
                            Model model) {
         QuestionDTO questionDTO = questionService.getById(id);
 
-        List<CommentDTO> comments = commentService.listByQuestionId(id);
+        List<CommentDTO> comments = commentService.listByTargetId(id, CommentTypeEnum.QUESTION);
 
         //累加阅读数
         questionService.incView(id);

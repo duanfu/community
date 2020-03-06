@@ -4,10 +4,7 @@ import life.duanfu.community.dto.CommentDTO;
 import life.duanfu.community.enums.CommentTypeEnum;
 import life.duanfu.community.exception.CustomizeErrorCode;
 import life.duanfu.community.exception.CustomizeException;
-import life.duanfu.community.mapper.CommentMapper;
-import life.duanfu.community.mapper.QuestionExtMapper;
-import life.duanfu.community.mapper.QuestionMapper;
-import life.duanfu.community.mapper.UserMapper;
+import life.duanfu.community.mapper.*;
 import life.duanfu.community.model.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +32,9 @@ public class CommentService {
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private CommentExtMapper commentExtMapper;
+
     @Transactional
     public void insert(Comment comment) {
         //首先comment必须得存在
@@ -53,6 +53,13 @@ public class CommentService {
                 throw new CustomizeException(CustomizeErrorCode.COMMENT_NOT_FOUND);
             }
             commentMapper.insert(comment);
+
+            //增加评论数
+            Comment parentComment = new Comment();
+            parentComment.setId(comment.getParentId());
+            parentComment.setCommentCount(1);
+            commentExtMapper.incCommentCount(parentComment);
+
         } else {
             //回复问题
             Question question = questionMapper.selectByPrimaryKey(comment.getParentId());
@@ -65,11 +72,11 @@ public class CommentService {
         }
     }
 
-    public List<CommentDTO> listByQuestionId(Long id) {
+    public List<CommentDTO> listByTargetId(Long id, CommentTypeEnum type) {
         CommentExample commentExample = new CommentExample();
         commentExample.createCriteria()
                 .andParentIdEqualTo(id)
-                .andTypeEqualTo(CommentTypeEnum.QUESTION.getType());
+                .andTypeEqualTo(type.getType());
         //问题按照回复时间，的倒序排列
         commentExample.setOrderByClause("gmt_create desc");
         List<Comment> comments = commentMapper.selectByExample(commentExample);
