@@ -82,18 +82,18 @@ function collapseComments(e) {
                         "src": comment.user.avatarUrl
                     }));
                     //右边
-                    var mediaBodyElement =$("<div/>", {
+                    var mediaBodyElement = $("<div/>", {
                         "class": "media-body"
                     }).append($("<h5/>", {
                         "class": "media-heading",
-                        "html":comment.user.name
+                        "html": comment.user.name
                     })).append($("<div/>", {
-                        "html":comment.content
-                    })).append($("<div/>",{
-                        "class":"menu"
-                    }).append($("<span/>",{
-                        "class":"pull-right",
-                        "html":moment(comment.gmtCreate).format('YYYY-MM-DD ')
+                        "html": comment.content
+                    })).append($("<div/>", {
+                        "class": "menu"
+                    }).append($("<span/>", {
+                        "class": "pull-right",
+                        "html": moment(comment.gmtCreate).format('YYYY-MM-DD ')
                     })));
                     //一个左边，一个整体
                     var mediaElement = $("<div/>", {
@@ -102,7 +102,8 @@ function collapseComments(e) {
                     //最后放到commentElement里面
                     var commentElement = $("<div/>", {
                         "class": "col-lg-12 col-md-12 col-sm-12 col-xs-12 comments"
-                    }).append(mediaElement);;
+                    }).append(mediaElement);
+                    ;
                     //
                     subCommentContainer.prepend(commentElement);
                 });
@@ -115,3 +116,20 @@ function collapseComments(e) {
         }
     }
 }
+
+function showSelectTag() {
+    $("#select-tag").show();
+}
+
+function selectTag(e) {
+    var value = e.getAttribute("data-tag");
+    var previous = $("#tag").val();
+    if (previous.indexOf(value) == -1) {
+        if (previous) {
+            $("#tag").val(previous + ',' + value);
+        } else {
+            $("#tag").val(value);
+        }
+    }
+}
+

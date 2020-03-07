@@ -35,8 +35,35 @@ body {
     margin-top: 25px;
 }
 
+.question—tag {
+    margin-right: 5px;
+}
+
+.question-related {
+    line-right: 20px;
+    font-size: 12px;
+    margin-left: 0;
+    list-style: none;
+    padding-left: 0;
+}
+
+.question-bolg {
+    width: 100%;
+}
+
+.publish-tag-tab {
+    display: none;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.publish-tag-tab .label-info {
+    white-space: normal;
+    margin: 5px 5px;
+    display: inline-block;
+}
+
 .community-menu {
-    display: block;
     font-size: 13px;
     color: #999;
     margin-bottom: 15px;
