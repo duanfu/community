@@ -2,6 +2,7 @@ package life.duanfu.community.service;
 
 import life.duanfu.community.dto.PaginationDTO;
 import life.duanfu.community.dto.QuestionDTO;
+import life.duanfu.community.dto.QuestionQueryDTO;
 import life.duanfu.community.exception.CustomizeErrorCode;
 import life.duanfu.community.exception.CustomizeException;
 import life.duanfu.community.mapper.QuestionExtMapper;
@@ -34,11 +35,22 @@ public class QuestionService {
     private QuestionExtMapper questionExtMapper;
 
     //分页
-    public PaginationDTO list(Integer page, Integer size) {
+    public PaginationDTO list(String search ,Integer page, Integer size) {
+
+        if (StringUtils.isNotBlank(search)) {
+            String[] tags = StringUtils.split(search, " ");
+            search=Arrays.stream(tags).collect(Collectors.joining("|"));
+        }
+
         PaginationDTO paginationDTO = new PaginationDTO();
         Integer totalPage;
+
         //Integer totalCount = questionMapper.count();
-        Integer totalCount = (int) questionMapper.countByExample(new QuestionExample());
+
+        QuestionQueryDTO questionQueryDTO = new QuestionQueryDTO();
+        questionQueryDTO.setSearch(search);
+        Integer totalCount = questionExtMapper.countBySearch(questionQueryDTO);
+
         if (totalCount % size == 0) {
             totalPage = totalCount / size;
         } else {
@@ -56,12 +68,9 @@ public class QuestionService {
         paginationDTO.setPagination(totalPage, page);
         //计算 size*(page-1)
         Integer offset = size * (page - 1);
-        //从数据库中查找问题，一页5个
-        //List<Question> questions = questionMapper.list(offset, size);
-        QuestionExample questionExample = new QuestionExample();
-        //倒序排列
-        questionExample.setOrderByClause("gmt_create desc");
-        List<Question> questions = questionMapper.selectByExampleWithBLOBsWithRowbounds(questionExample, new RowBounds(offset, size));
+        questionQueryDTO.setPage(offset);
+        questionQueryDTO.setSize(size);
+        List<Question> questions = questionExtMapper.selectBySearch(questionQueryDTO);
 
         List<QuestionDTO> questionDTOList = new ArrayList<>();
 
@@ -81,6 +90,7 @@ public class QuestionService {
 
     //展示我的问题
     public PaginationDTO list(Long userId, Integer page, Integer size) {
+
         PaginationDTO paginationDTO = new PaginationDTO();
         Integer totalPage;
 
