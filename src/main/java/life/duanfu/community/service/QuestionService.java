@@ -35,11 +35,11 @@ public class QuestionService {
     private QuestionExtMapper questionExtMapper;
 
     //分页
-    public PaginationDTO list(String search ,Integer page, Integer size) {
+    public PaginationDTO list(String search, Integer page, Integer size) {
 
         if (StringUtils.isNotBlank(search)) {
             String[] tags = StringUtils.split(search, " ");
-            search=Arrays.stream(tags).collect(Collectors.joining("|"));
+            search = Arrays.stream(tags).collect(Collectors.joining("|"));
         }
 
         PaginationDTO paginationDTO = new PaginationDTO();
@@ -67,7 +67,7 @@ public class QuestionService {
         //首页，前一页，后一页，尾页的设置
         paginationDTO.setPagination(totalPage, page);
         //计算 size*(page-1)
-        Integer offset = size * (page - 1);
+        Integer offset = page < 1 ? 0 : size * (page - 1);
         questionQueryDTO.setPage(offset);
         questionQueryDTO.setSize(size);
         List<Question> questions = questionExtMapper.selectBySearch(questionQueryDTO);
@@ -116,7 +116,6 @@ public class QuestionService {
         }
 
         paginationDTO.setPagination(totalPage, page);
-        //size*(page-1)
         Integer offset = size * (page - 1);
         //List<Question> questions = questionMapper.listByUserId(userId, offset, size);
         QuestionExample example = new QuestionExample();

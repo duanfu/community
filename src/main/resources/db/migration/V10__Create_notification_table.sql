@@ -6,5 +6,5 @@ CREATE TABLE notification
     outerId BIGINT NOT NULL,
     type INT NOT NULL,
     gmt_create BIGINT NOT NULL,
-    type INT DEFAULT 0 NOT NULL
+    status INT DEFAULT 0 NOT NULL
 );
