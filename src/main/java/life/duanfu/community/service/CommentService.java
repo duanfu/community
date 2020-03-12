@@ -57,7 +57,6 @@ public class CommentService {
             if (dbComment == null) {
                 throw new CustomizeException(CustomizeErrorCode.COMMENT_NOT_FOUND);
             }
-            commentMapper.insert(comment);
 
             Question question = questionMapper.selectByPrimaryKey(dbComment.getParentId());
             if (question == null) {
@@ -117,16 +116,19 @@ public class CommentService {
         if (comments.size() == 0) {
             return new ArrayList<>();
         }
-        //这样拿到了commentators评论人，假如有10条评论，5条重复，拿到5个人的id就行了
+
+        //这样拿到了去重的commentators评论人，假如有10条评论，5条重复，拿到5个人的id就行了
         Set<Long> commentators = comments.stream().map(comment -> comment.getCommentator()).collect(Collectors.toSet());
         List<Long> userIds = new ArrayList();
         userIds.addAll(commentators);
+
         //获取评论人，并转换为map
         UserExample userExample = new UserExample();
         userExample.createCriteria()
                 .andIdIn(userIds);
         List<User> users = userMapper.selectByExample(userExample);
         Map<Long, User> userMap = users.stream().collect(Collectors.toMap(user -> user.getId(), user -> user));
+
         //转换 comment 为 commentDTO，添加一个user属性
         List<CommentDTO> commentDTOS = comments.stream().map(comment -> {
             CommentDTO commentDTO = new CommentDTO();

@@ -38,8 +38,6 @@ function comment2target(targetId, type, content) {
         },
         dataType: "json"
     });
-    console.log(questionId);
-    console.log(content);
 }
 
 function comment(e) {
@@ -95,16 +93,18 @@ function collapseComments(e) {
                         "class": "pull-right",
                         "html": moment(comment.gmtCreate).format('YYYY-MM-DD ')
                     })));
+
                     //一个左边，一个整体
                     var mediaElement = $("<div/>", {
                         "class": "media"
                     }).append(mediaLeftElement).append(mediaBodyElement);
+
                     //最后放到commentElement里面
                     var commentElement = $("<div/>", {
                         "class": "col-lg-12 col-md-12 col-sm-12 col-xs-12 comments"
                     }).append(mediaElement);
                     ;
-                    //
+
                     subCommentContainer.prepend(commentElement);
                 });
                 //展开二级评论
