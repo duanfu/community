@@ -6109,3 +6109,10 @@ insert into USER (ID, ACCOUNT_ID, NAME,
 2020-03-12 14:09:45.723 DEBUG 12376 --- [http-nio-8888-exec-8] l.d.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( ID in ( ? , ? ) ) 
 2020-03-12 14:09:45.724 DEBUG 12376 --- [http-nio-8888-exec-8] l.d.c.mapper.UserMapper.selectByExample  : ==> Parameters: 33(Long), 1(Long)
 2020-03-12 14:09:45.724 DEBUG 12376 --- [http-nio-8888-exec-8] l.d.c.mapper.UserMapper.selectByExample  : <==      Total: 2
+2020-03-12 14:18:41.448  INFO 15636 --- [main] l.d.community.CommunityApplicationTests  : Starting CommunityApplicationTests on LAPTOP-TM88SOE4 with PID 15636 (started by 16584 in D:\±ÏÉèÏîÄ¿\community)
+2020-03-12 14:18:41.448  INFO 15636 --- [main] l.d.community.CommunityApplicationTests  : No active profile set, falling back to default profiles: default
+2020-03-12 14:18:41.713  WARN 15636 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-03-12 14:18:44.247  INFO 15636 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-12 14:18:44.418  INFO 15636 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-12 14:18:44.842  INFO 15636 --- [main] l.d.community.CommunityApplicationTests  : Started CommunityApplicationTests in 3.984 seconds (JVM running for 5.405)
+2020-03-12 14:18:45.327  INFO 15636 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

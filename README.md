@@ -1,7 +1,7 @@
 ## 快速运行
 
 1.安装必备工具  
-   JDK，Mavenfit
+   JDK8，Maven，Git
 
 2.运行打包命令
 
