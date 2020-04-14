@@ -3,9 +3,17 @@
 1.安装必备工具  
    JDK8，Maven，Git
 
-2.运行打包命令
+2.运行命令
 
 ```sh
+//克隆源码
+git clone
+cd community
+
+//运行数据库脚本
+mvn flyway:migrate
+
+//打包
 mvn package
 ```
 
