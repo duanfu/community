@@ -47,7 +47,6 @@ public class HotTagCache {
             poll = priorityQueue.poll();
         }
         hots =sortedTags;
-        System.out.println(this.hots);
     }
 }
 
