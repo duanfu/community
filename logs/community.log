@@ -1,218 +1,52 @@
-2020-04-14 20:56:36.859  INFO 10860 --- [main] l.duanfu.community.CommunityApplication  : Starting CommunityApplication v0.0.1-SNAPSHOT on LAPTOP-TM88SOE4 with PID 10860 (D:\������Ŀ\community\target\community-0.0.1-SNAPSHOT.jar started by 16584 in D:\������Ŀ\community)
-2020-04-14 20:56:36.879  INFO 10860 --- [main] l.duanfu.community.CommunityApplication  : No active profile set, falling back to default profiles: default
-2020-04-14 20:56:37.506  WARN 10860 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2020-04-14 20:56:42.553  INFO 10860 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
-2020-04-14 20:56:42.580  INFO 10860 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-14 20:56:42.581  INFO 10860 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
-2020-04-14 20:56:42.783  INFO 10860 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-14 20:56:42.783  INFO 10860 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5697 ms
-2020-04-14 20:56:45.368  INFO 10860 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-14 20:56:45.614  INFO 10860 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-14 20:56:45.963  INFO 10860 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2020-04-14 20:56:46.103  INFO 10860 --- [scheduling-1] l.duanfu.community.schedule.HotTagTasks  : hotTagSchedule start Tue Apr 14 20:56:46 CST 2020
-2020-04-14 20:56:46.264  INFO 10860 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
-2020-04-14 20:56:46.277  INFO 10860 --- [main] l.duanfu.community.CommunityApplication  : Started CommunityApplication in 10.762 seconds (JVM running for 12.968)
-2020-04-14 20:56:46.311  INFO 10860 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-04-14 20:56:47.183  INFO 10860 --- [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-04-14 20:56:47.347  INFO 10860 --- [scheduling-1] l.duanfu.community.schedule.HotTagTasks  : hotTagSchedule stop Tue Apr 14 20:56:47 CST 2020
-2020-04-14 20:57:15.706  INFO 10860 --- [http-nio-8888-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-14 20:57:15.707  INFO 10860 --- [http-nio-8888-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-14 20:57:15.735  INFO 10860 --- [http-nio-8888-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 28 ms
-2020-04-14 22:10:19.284  INFO 9820 --- [restartedMain] l.duanfu.community.CommunityApplication  : Starting CommunityApplication on LAPTOP-TM88SOE4 with PID 9820 (started by 16584 in D:\毕设项目\community)
-2020-04-14 22:10:19.284  INFO 9820 --- [restartedMain] l.duanfu.community.CommunityApplication  : No active profile set, falling back to default profiles: default
-2020-04-14 22:10:19.487  INFO 9820 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-04-14 22:10:19.487  INFO 9820 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-04-14 22:10:19.597  WARN 9820 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2020-04-14 22:10:22.403  INFO 9820 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
-2020-04-14 22:10:22.419  INFO 9820 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-14 22:10:22.419  INFO 9820 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
-2020-04-14 22:10:22.544  INFO 9820 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-14 22:10:22.544  INFO 9820 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3057 ms
-2020-04-14 22:10:22.590  INFO 9820 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-04-14 22:10:22.918  INFO 9820 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-04-14 22:10:22.918  INFO 9820 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
-2020-04-14 22:10:23.920  INFO 9820 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-14 22:10:23.987  INFO 9820 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-14 22:10:24.193  INFO 9820 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2020-04-14 22:10:24.535  INFO 9820 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-04-14 22:10:24.566  INFO 9820 --- [scheduling-1] l.duanfu.community.schedule.HotTagTasks  : hotTagSchedule start Tue Apr 14 22:10:24 CST 2020
-2020-04-14 22:10:24.610  INFO 9820 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
-2020-04-14 22:10:24.626  INFO 9820 --- [restartedMain] l.duanfu.community.CommunityApplication  : Started CommunityApplication in 6.055 seconds (JVM running for 8.281)
-2020-04-14 22:10:24.723  INFO 9820 --- [scheduling-1] l.duanfu.community.schedule.HotTagTasks  : hotTagSchedule stop Tue Apr 14 22:10:24 CST 2020
-2020-04-14 22:10:52.614  INFO 3900 --- [restartedMain] l.duanfu.community.CommunityApplication  : Starting CommunityApplication on LAPTOP-TM88SOE4 with PID 3900 (started by 16584 in D:\毕设项目\community)
-2020-04-14 22:10:52.614  INFO 3900 --- [restartedMain] l.duanfu.community.CommunityApplication  : No active profile set, falling back to default profiles: default
-2020-04-14 22:10:52.665  INFO 3900 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-04-14 22:10:52.665  INFO 3900 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-04-14 22:10:52.728  WARN 3900 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2020-04-14 22:10:53.992  INFO 3900 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
-2020-04-14 22:10:54.007  INFO 3900 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-14 22:10:54.007  INFO 3900 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
-2020-04-14 22:10:54.179  INFO 3900 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-14 22:10:54.179  INFO 3900 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1514 ms
-2020-04-14 22:10:54.241  INFO 3900 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-04-14 22:10:54.469  INFO 3900 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-04-14 22:10:54.485  INFO 3900 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
-2020-04-14 22:10:55.114  INFO 3900 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-14 22:10:55.177  INFO 3900 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-14 22:10:55.270  INFO 3900 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2020-04-14 22:10:55.364  INFO 3900 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-04-14 22:10:55.395  INFO 3900 --- [scheduling-1] l.duanfu.community.schedule.HotTagTasks  : hotTagSchedule start Tue Apr 14 22:10:55 CST 2020
-2020-04-14 22:10:55.411  INFO 3900 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
-2020-04-14 22:10:55.426  INFO 3900 --- [restartedMain] l.duanfu.community.CommunityApplication  : Started CommunityApplication in 3.198 seconds (JVM running for 4.527)
-2020-04-14 22:10:55.458  INFO 3900 --- [scheduling-1] l.duanfu.community.schedule.HotTagTasks  : hotTagSchedule stop Tue Apr 14 22:10:55 CST 2020
-2020-04-14 22:11:44.483  INFO 3900 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-14 22:11:44.483  INFO 3900 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-14 22:11:44.489  INFO 3900 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
-2020-04-14 22:12:53.210  WARN 3900 --- [http-nio-8888-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'code' is not present]
-2020-04-14 22:13:26.037  INFO 3900 --- [http-nio-8888-exec-8] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
- Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
-
-java.lang.IllegalArgumentException: Invalid character found in method name. HTTP method names must be tokens
-	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:415) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:260) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.30.jar:9.0.30]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) [tomcat-embed-core-9.0.30.jar:9.0.30]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598) [tomcat-embed-core-9.0.30.jar:9.0.30]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.30.jar:9.0.30]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_152]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_152]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.30.jar:9.0.30]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_152]
-
-2020-04-14 22:17:45.402  INFO 15316 --- [restartedMain] l.duanfu.community.CommunityApplication  : Starting CommunityApplication on LAPTOP-TM88SOE4 with PID 15316 (started by 16584 in D:\毕设项目\community)
-2020-04-14 22:17:45.402  INFO 15316 --- [restartedMain] l.duanfu.community.CommunityApplication  : No active profile set, falling back to default profiles: default
-2020-04-14 22:17:45.547  INFO 15316 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-04-14 22:17:45.547  INFO 15316 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-04-14 22:17:45.610  WARN 15316 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2020-04-14 22:17:46.895  INFO 15316 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
-2020-04-14 22:17:46.895  INFO 15316 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-14 22:17:46.895  INFO 15316 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
-2020-04-14 22:17:47.004  INFO 15316 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-14 22:17:47.004  INFO 15316 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1457 ms
-2020-04-14 22:17:47.051  INFO 15316 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-04-14 22:17:47.207  INFO 15316 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-04-14 22:17:47.207  INFO 15316 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
-2020-04-14 22:17:47.816  INFO 15316 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-14 22:17:47.879  INFO 15316 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-14 22:17:47.972  INFO 15316 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2020-04-14 22:17:48.051  INFO 15316 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-04-14 22:17:48.085  INFO 15316 --- [scheduling-1] l.duanfu.community.schedule.HotTagTasks  : hotTagSchedule start Tue Apr 14 22:17:48 CST 2020
-2020-04-14 22:17:48.102  INFO 15316 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
-2020-04-14 22:17:48.102  INFO 15316 --- [restartedMain] l.duanfu.community.CommunityApplication  : Started CommunityApplication in 3.175 seconds (JVM running for 4.531)
-2020-04-14 22:17:48.133  INFO 15316 --- [scheduling-1] l.duanfu.community.schedule.HotTagTasks  : hotTagSchedule stop Tue Apr 14 22:17:48 CST 2020
-2020-04-14 22:17:52.727  INFO 15316 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-14 22:17:52.728  INFO 15316 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-14 22:17:52.745  INFO 15316 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
-2020-04-14 22:24:42.827  INFO 13288 --- [restartedMain] l.duanfu.community.CommunityApplication  : Starting CommunityApplication on LAPTOP-TM88SOE4 with PID 13288 (started by 16584 in D:\毕设项目\community)
-2020-04-14 22:24:42.827  INFO 13288 --- [restartedMain] l.duanfu.community.CommunityApplication  : No active profile set, falling back to default profiles: default
-2020-04-14 22:24:42.921  INFO 13288 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-04-14 22:24:42.921  INFO 13288 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-04-14 22:24:42.984  WARN 13288 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2020-04-14 22:24:44.409  INFO 13288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
-2020-04-14 22:24:44.409  INFO 13288 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-14 22:24:44.425  INFO 13288 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
-2020-04-14 22:24:44.534  INFO 13288 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-14 22:24:44.534  INFO 13288 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1597 ms
-2020-04-14 22:24:44.566  INFO 13288 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-04-14 22:24:44.737  INFO 13288 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-04-14 22:24:44.753  INFO 13288 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
-2020-04-14 22:24:45.326  INFO 13288 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-14 22:24:45.404  INFO 13288 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-14 22:24:45.505  INFO 13288 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2020-04-14 22:24:45.604  INFO 13288 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-04-14 22:24:45.619  INFO 13288 --- [scheduling-1] l.duanfu.community.schedule.HotTagTasks  : hotTagSchedule start Tue Apr 14 22:24:45 CST 2020
-2020-04-14 22:24:45.650  INFO 13288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
-2020-04-14 22:24:45.650  INFO 13288 --- [restartedMain] l.duanfu.community.CommunityApplication  : Started CommunityApplication in 3.307 seconds (JVM running for 6.892)
-2020-04-14 22:24:45.682  INFO 13288 --- [scheduling-1] l.duanfu.community.schedule.HotTagTasks  : hotTagSchedule stop Tue Apr 14 22:24:45 CST 2020
-2020-04-14 22:25:16.244  INFO 13288 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-14 22:25:16.245  INFO 13288 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-14 22:25:16.251  INFO 13288 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
-2020-04-14 22:32:22.274 ERROR 13288 --- [http-nio-8888-exec-5] l.d.c.controller.AuthorizeController     : callback get github error,null
-2020-04-14 22:32:34.210 ERROR 13288 --- [http-nio-8888-exec-9] l.d.c.controller.AuthorizeController     : callback get github error,null
-2020-04-14 22:32:50.269 ERROR 13288 --- [http-nio-8888-exec-2] l.d.c.controller.AuthorizeController     : callback get github error,null
-2020-04-14 22:52:00.461  INFO 9964 --- [restartedMain] l.duanfu.community.CommunityApplication  : Starting CommunityApplication on LAPTOP-TM88SOE4 with PID 9964 (started by 16584 in D:\毕设项目\community)
-2020-04-14 22:52:00.461  INFO 9964 --- [restartedMain] l.duanfu.community.CommunityApplication  : No active profile set, falling back to default profiles: default
-2020-04-14 22:52:00.602  INFO 9964 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-04-14 22:52:00.602  INFO 9964 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-04-14 22:52:00.680  WARN 9964 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2020-04-14 22:52:03.036  INFO 9964 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
-2020-04-14 22:52:03.049  INFO 9964 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-14 22:52:03.049  INFO 9964 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
-2020-04-14 22:52:03.220  INFO 9964 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-14 22:52:03.221  INFO 9964 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2619 ms
-2020-04-14 22:52:03.290  INFO 9964 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-04-14 22:52:03.506  INFO 9964 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-04-14 22:52:03.514  INFO 9964 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
-2020-04-14 22:52:04.296  INFO 9964 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-14 22:52:04.367  INFO 9964 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-14 22:52:04.526  INFO 9964 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2020-04-14 22:52:04.641  INFO 9964 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-04-14 22:52:04.665  INFO 9964 --- [scheduling-1] l.duanfu.community.schedule.HotTagTasks  : hotTagSchedule start Tue Apr 14 22:52:04 CST 2020
-2020-04-14 22:52:04.719  INFO 9964 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
-2020-04-14 22:52:04.722  INFO 9964 --- [restartedMain] l.duanfu.community.CommunityApplication  : Started CommunityApplication in 4.969 seconds (JVM running for 6.64)
-2020-04-14 22:52:04.742  INFO 9964 --- [scheduling-1] l.duanfu.community.schedule.HotTagTasks  : hotTagSchedule stop Tue Apr 14 22:52:04 CST 2020
-2020-04-14 22:52:07.610  INFO 9964 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-14 22:52:07.611  INFO 9964 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-14 22:52:07.622  INFO 9964 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
-2020-04-14 22:54:30.590 ERROR 9964 --- [http-nio-8888-exec-9] l.d.c.controller.AuthorizeController     : callback get github error,null
-2020-04-14 22:54:57.044 ERROR 9964 --- [http-nio-8888-exec-3] l.d.c.controller.AuthorizeController     : callback get github error,null
-2020-04-14 22:55:10.284 ERROR 9964 --- [http-nio-8888-exec-6] l.d.c.controller.AuthorizeController     : callback get github error,null
-2020-04-14 22:55:22.340 ERROR 9964 --- [http-nio-8888-exec-8] l.d.c.controller.AuthorizeController     : callback get github error,null
-2020-04-14 22:55:31.362 ERROR 9964 --- [http-nio-8888-exec-10] l.d.c.controller.AuthorizeController     : callback get github error,null
-2020-04-14 22:56:56.213 ERROR 9964 --- [http-nio-8888-exec-6] l.d.c.controller.AuthorizeController     : callback get github error,null
-2020-04-14 22:57:04.209 ERROR 9964 --- [http-nio-8888-exec-4] l.d.c.controller.AuthorizeController     : callback get github error,null
-2020-04-14 22:57:14.312 ERROR 9964 --- [http-nio-8888-exec-5] l.d.c.controller.AuthorizeController     : callback get github error,null
-2020-04-14 22:57:23.644 ERROR 9964 --- [http-nio-8888-exec-10] l.d.c.controller.AuthorizeController     : callback get github error,null
-2020-04-14 22:57:30.049 ERROR 9964 --- [http-nio-8888-exec-2] l.d.c.controller.AuthorizeController     : callback get github error,null
-2020-04-14 22:57:36.410 ERROR 9964 --- [http-nio-8888-exec-5] l.d.c.controller.AuthorizeController     : callback get github error,null
-2020-04-14 22:57:46.652 ERROR 9964 --- [http-nio-8888-exec-6] l.d.c.controller.AuthorizeController     : callback get github error,null
-2020-04-14 22:58:07.975 ERROR 9964 --- [http-nio-8888-exec-9] l.d.c.controller.AuthorizeController     : callback get github error,null
-2020-04-14 22:58:20.493 ERROR 9964 --- [http-nio-8888-exec-10] l.d.c.controller.AuthorizeController     : callback get github error,null
-2020-04-14 23:17:13.113  INFO 11688 --- [restartedMain] l.duanfu.community.CommunityApplication  : Starting CommunityApplication on LAPTOP-TM88SOE4 with PID 11688 (started by 16584 in D:\毕设项目\community)
-2020-04-14 23:17:13.115  INFO 11688 --- [restartedMain] l.duanfu.community.CommunityApplication  : No active profile set, falling back to default profiles: default
-2020-04-14 23:17:13.228  INFO 11688 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-04-14 23:17:13.228  INFO 11688 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-04-14 23:17:13.290  WARN 11688 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2020-04-14 23:17:14.815  INFO 11688 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
-2020-04-14 23:17:14.830  INFO 11688 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-14 23:17:14.830  INFO 11688 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
-2020-04-14 23:17:14.955  INFO 11688 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-14 23:17:14.955  INFO 11688 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1726 ms
-2020-04-14 23:17:14.987  INFO 11688 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-04-14 23:17:15.221  INFO 11688 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-04-14 23:17:15.221  INFO 11688 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
-2020-04-14 23:17:15.943  INFO 11688 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-14 23:17:15.997  INFO 11688 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-14 23:17:16.098  INFO 11688 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2020-04-14 23:17:16.214  INFO 11688 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-04-14 23:17:16.237  INFO 11688 --- [scheduling-1] l.duanfu.community.schedule.HotTagTasks  : hotTagSchedule start Tue Apr 14 23:17:16 CST 2020
-2020-04-14 23:17:16.263  INFO 11688 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
-2020-04-14 23:17:16.266  INFO 11688 --- [restartedMain] l.duanfu.community.CommunityApplication  : Started CommunityApplication in 3.701 seconds (JVM running for 5.363)
-2020-04-14 23:17:16.300  INFO 11688 --- [scheduling-1] l.duanfu.community.schedule.HotTagTasks  : hotTagSchedule stop Tue Apr 14 23:17:16 CST 2020
-2020-04-14 23:17:30.882  INFO 11688 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-14 23:17:30.883  INFO 11688 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-14 23:17:30.905  INFO 11688 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 21 ms
-2020-04-14 23:28:46.499  INFO 3544 --- [restartedMain] l.duanfu.community.CommunityApplication  : Starting CommunityApplication on LAPTOP-TM88SOE4 with PID 3544 (started by 16584 in D:\毕设项目\community)
-2020-04-14 23:28:46.499  INFO 3544 --- [restartedMain] l.duanfu.community.CommunityApplication  : No active profile set, falling back to default profiles: default
-2020-04-14 23:28:46.577  INFO 3544 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-04-14 23:28:46.592  INFO 3544 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-04-14 23:28:46.686  WARN 3544 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2020-04-14 23:28:48.154  INFO 3544 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
-2020-04-14 23:28:48.164  INFO 3544 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-14 23:28:48.164  INFO 3544 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
-2020-04-14 23:28:48.267  INFO 3544 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-14 23:28:48.267  INFO 3544 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1675 ms
-2020-04-14 23:28:48.318  INFO 3544 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-04-14 23:28:48.490  INFO 3544 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-04-14 23:28:48.490  INFO 3544 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
-2020-04-14 23:28:49.101  INFO 3544 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-14 23:28:49.163  INFO 3544 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-14 23:28:49.257  INFO 3544 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2020-04-14 23:28:49.350  INFO 3544 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-04-14 23:28:49.382  INFO 3544 --- [scheduling-1] l.duanfu.community.schedule.HotTagTasks  : hotTagSchedule start Tue Apr 14 23:28:49 CST 2020
-2020-04-14 23:28:49.397  INFO 3544 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
-2020-04-14 23:28:49.397  INFO 3544 --- [restartedMain] l.duanfu.community.CommunityApplication  : Started CommunityApplication in 3.378 seconds (JVM running for 4.725)
-2020-04-14 23:28:49.429  INFO 3544 --- [scheduling-1] l.duanfu.community.schedule.HotTagTasks  : hotTagSchedule stop Tue Apr 14 23:28:49 CST 2020
-2020-04-14 23:28:59.477  INFO 3544 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-04-14 23:28:59.477  INFO 3544 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-04-14 23:28:59.484  INFO 3544 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2020-04-15 09:07:16.397  INFO 1356 --- [restartedMain] l.duanfu.community.CommunityApplication  : Starting CommunityApplication on LAPTOP-TM88SOE4 with PID 1356 (started by 16584 in D:\毕设项目\community)
+2020-04-15 09:07:16.402  INFO 1356 --- [restartedMain] l.duanfu.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2020-04-15 09:07:16.597  INFO 1356 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-15 09:07:16.597  INFO 1356 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-15 09:07:16.805  WARN 1356 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-04-15 09:07:21.227  INFO 1356 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2020-04-15 09:07:21.247  INFO 1356 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-15 09:07:21.247  INFO 1356 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-15 09:07:21.608  INFO 1356 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-15 09:07:21.612  INFO 1356 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5015 ms
+2020-04-15 09:07:21.800  INFO 1356 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-04-15 09:07:22.227  INFO 1356 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-04-15 09:07:22.272  INFO 1356 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
+2020-04-15 09:07:24.072  INFO 1356 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-15 09:07:24.272  INFO 1356 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-04-15 09:07:24.737  INFO 1356 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-04-15 09:07:25.248  INFO 1356 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-04-15 09:07:25.330  INFO 1356 --- [scheduling-1] l.duanfu.community.schedule.HotTagTasks  : hotTagSchedule start Wed Apr 15 09:07:25 CST 2020
+2020-04-15 09:07:25.397  INFO 1356 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2020-04-15 09:07:25.407  INFO 1356 --- [restartedMain] l.duanfu.community.CommunityApplication  : Started CommunityApplication in 10.146 seconds (JVM running for 15.658)
+2020-04-15 09:07:25.537  INFO 1356 --- [scheduling-1] l.duanfu.community.schedule.HotTagTasks  : hotTagSchedule stop Wed Apr 15 09:07:25 CST 2020
+2020-04-15 09:08:12.743  INFO 1356 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-15 09:08:12.744  INFO 1356 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-04-15 09:08:12.758  INFO 1356 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2020-04-15 09:11:31.534 ERROR 1356 --- [http-nio-8888-exec-7] l.d.c.controller.AuthorizeController     : callback get github error,null
+2020-04-15 09:11:41.162 ERROR 1356 --- [http-nio-8888-exec-9] l.d.c.controller.AuthorizeController     : callback get github error,null
+2020-04-15 09:11:50.120 ERROR 1356 --- [http-nio-8888-exec-3] l.d.c.controller.AuthorizeController     : callback get github error,null
+2020-04-15 09:11:54.888 ERROR 1356 --- [http-nio-8888-exec-5] l.d.c.controller.AuthorizeController     : callback get github error,null
+2020-04-15 11:34:47.758  INFO 1680 --- [restartedMain] l.duanfu.community.CommunityApplication  : Starting CommunityApplication on LAPTOP-TM88SOE4 with PID 1680 (started by 16584 in D:\毕设项目\community)
+2020-04-15 11:34:47.766  INFO 1680 --- [restartedMain] l.duanfu.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2020-04-15 11:34:48.086  INFO 1680 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-15 11:34:48.087  INFO 1680 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-15 11:34:48.560  WARN 1680 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-04-15 11:34:52.888  INFO 1680 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2020-04-15 11:34:52.917  INFO 1680 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-15 11:34:52.918  INFO 1680 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-15 11:34:53.225  INFO 1680 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-15 11:34:53.226  INFO 1680 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5136 ms
+2020-04-15 11:34:53.334  INFO 1680 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-04-15 11:34:53.772  INFO 1680 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-04-15 11:34:53.790  INFO 1680 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
+2020-04-15 11:34:55.640  INFO 1680 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-15 11:34:55.815  INFO 1680 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-04-15 11:34:56.200  INFO 1680 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-04-15 11:34:56.488  INFO 1680 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-04-15 11:34:56.538  INFO 1680 --- [scheduling-1] l.duanfu.community.schedule.HotTagTasks  : hotTagSchedule start Wed Apr 15 11:34:56 CST 2020
+2020-04-15 11:34:56.617  INFO 1680 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2020-04-15 11:34:56.627  INFO 1680 --- [restartedMain] l.duanfu.community.CommunityApplication  : Started CommunityApplication in 10.285 seconds (JVM running for 14.186)
+2020-04-15 11:34:56.749  INFO 1680 --- [scheduling-1] l.duanfu.community.schedule.HotTagTasks  : hotTagSchedule stop Wed Apr 15 11:34:56 CST 2020
+2020-04-15 11:35:25.367  INFO 1680 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-15 11:35:25.367  INFO 1680 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-04-15 11:35:25.403  INFO 1680 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 35 ms
